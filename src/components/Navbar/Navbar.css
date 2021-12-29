@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: cornflowerblue;
+    align-items: center;
+    padding: 10px;
+}
+.navbar img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0 20px 0 20px;
+}
+.btn{
+
+    margin-left: 20px;
+
+}

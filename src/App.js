@@ -15,11 +15,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // console.log(auth)
 
-const Signout = () => {
-  return (
-    auth.currentUser && <button onClick={() => auth.signOut()}>Signout</button>
-  );
-};
+
 
 function App() {
   const [user] = useAuthState(auth);
@@ -27,7 +23,7 @@ function App() {
   return (
     <div className="App">
       { user ? <Chatroom auth={auth}/> : <Signin auth={auth} />}
-      <Signout />
+      {/* <Signout /> */}
     </div>
   );
 }
