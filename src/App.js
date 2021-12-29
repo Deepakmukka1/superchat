@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      { user ? <Chatroom auth={auth}/> : <Signin auth={auth} />}
+      { user ? <Chatroom auth={auth} app={app}/> : <Signin auth={auth} />}
       {/* <Signout /> */}
     </div>
   );
