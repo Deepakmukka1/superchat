@@ -6,17 +6,9 @@ import { initializeApp } from "firebase/app";
 // import firebase from 'firebase/app'
 import Chatroom from "./components/Chatroom";
 import Signin from "./components/Signin";
+import { firebaseConfig } from "./config/firebase";
 
 // Import the functions you need from the SDKs you need
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDdnLpgqWZfXpW6orfK8fYyDGJwUhb1jKg",
-  authDomain: "chatapp-49fb9.firebaseapp.com",
-  projectId: "chatapp-49fb9",
-  storageBucket: "chatapp-49fb9.appspot.com",
-  messagingSenderId: "391765343836",
-  appId: "1:391765343836:web:bf824ddb0c27db5ecd7099",
-};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -34,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      {user ? <Chatroom /> : <Signin auth={auth} />}
+      { user ? <Chatroom auth={auth}/> : <Signin auth={auth} />}
       <Signout />
     </div>
   );
