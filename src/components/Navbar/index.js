@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import './Navbar.css'
 
@@ -10,7 +11,7 @@ const Signout = ({auth}) => {
 const Navbar = (props) => {
     return (
         <div className='navbar'>
-            <img src={props.imageURL}/>
+            <img src={props.imageURL} />
             <h4>{props.name}</h4>
             <Signout auth={props.auth}/>
         </div>
