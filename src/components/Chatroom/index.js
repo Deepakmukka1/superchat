@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import {
   getFirestore,
@@ -9,29 +9,27 @@ import {
   limit,
   addDoc,
   serverTimestamp,
+  query,
 } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 const Chatroom = ({ auth, app }) => {
-  // console.log(auth)
+
   const { currentUser } = auth;
-  const [messages, loading, error] = useCollection(
-    collection(getFirestore(app), "messages"),
-    orderBy("createdAt", limit(25))
-  );
-
+  const db = getFirestore(app);
+  const messageRef = collection(db, "messages");
+  const qureyToBe = query(messageRef, orderBy("createdAt"), limit(25));
+  const [messages]=useCollection(qureyToBe)
+  
   const wirteData = async () => {
-    const db = getFirestore(app);
-
-    const docRef = await addDoc(collection(db, "messages"), {
-      message: "new-message",
+    await addDoc(collection(db, "messages"), {
+      message: "new-message-4",
       createdAt: serverTimestamp(),
       uid: currentUser.uid,
       photoURL: currentUser.photoURL,
     });
 
-    console.log(docRef.id);
-    // setDoc(docRef, { capital: true }, { merge: true });
+    // console.log(docRef.id);
   };
 
   return (
@@ -42,9 +40,7 @@ const Chatroom = ({ auth, app }) => {
         auth={auth}
       />
       <h3>Chatroom</h3>
-      <p>
-        {error && <strong>Error: {JSON.stringify(error)}</strong>}
-        {loading && <span>Collection: Loading...</span>}
+   
         {messages && (
           <span>
             {messages.docs.map((doc) => (
@@ -54,7 +50,8 @@ const Chatroom = ({ auth, app }) => {
             ))}
           </span>
         )}
-      </p>
+        {/* {messages && messages.length} */}
+   
       <button onClick={wirteData}>Write</button>
     </div>
   );
