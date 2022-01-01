@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
