@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import './Chatroom.css'
 import { useCollection } from "react-firebase-hooks/firestore";
+import ChatMessage from "../Chatmessage";
 
 const Chatroom = ({ auth, app }) => {
 
@@ -60,7 +61,7 @@ const Chatroom = ({ auth, app }) => {
   }
 
   return (
- <div>
+ <div className="main">
     <div>
       <Navbar
         name={currentUser.displayName}
@@ -68,7 +69,7 @@ const Chatroom = ({ auth, app }) => {
         auth={auth}
       />
     </div>
-      <div className="main">
+      <div>
       <div className="see-chat">
       <h3>Chatroom</h3>
    
@@ -76,7 +77,7 @@ const Chatroom = ({ auth, app }) => {
           <span>
             {messages.docs.map((doc) => (
               <React.Fragment key={doc.id}>
-                <p>{doc.data().message}</p>
+                <ChatMessage data={doc.data()} auth={auth}/>
               </React.Fragment>
             ))}
           </span>

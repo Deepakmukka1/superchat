@@ -1,54 +1,11 @@
 .main{
 
-    width: 100vw;
-    height: 85vh;
-    background-color: #c8d6e5;
+    /* width: 99vw; */
+    height: 100vh;
+
 }
 
 .see-chat{
-
-    /* margin-top: 0rem; */
-    height: 78.7vh;
-    display: flex;
-    flex-direction: column;
-    /* background-color: yellow; */
-    overflow-y: auto;
-
-}
-
-
-
-.msg-send{
-
-    height: 10vh;
-    background-color: #222f3e;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-
-}
-
-.msg-input{
-
-    width: 70%;
-    height: 1.5rem;
-    border: none;
-    padding: 5px;
-    color: black;
-    font-weight: bolder;
-
-}
-.btn{
-
-    background-color: #3498db;
-    color: black;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    margin-left: 10px;
-    cursor: pointer;
-
-    
+    height: 80vh;
+    overflow-y: scroll;
 }
