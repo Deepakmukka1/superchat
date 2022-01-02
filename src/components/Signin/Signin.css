@@ -1,0 +1,13 @@
+.signin{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 100vh;
+}
+.icon{
+
+    /* transform: scale(0.9); */
+    margin: 5rem;
+}
