@@ -12,7 +12,7 @@ const Navbar = (props) => {
     return (
         <div className='navbar'>
             <div className='icon'>
-             <h3>Chatroom</h3>
+             <h3> 💬 Chatroom</h3>
             </div>
              <div className='meta-data'>
             <img src={props.imageURL} />

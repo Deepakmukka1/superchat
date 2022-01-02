@@ -20,12 +20,12 @@
     flex-direction: row;
     justify-content: flex-end;
     color: white;
-    background-color: darkblue;
+    background-color: #2ecc71;
     padding: 10px;
     border-radius: 10px;
 }
 .not-my-message p{
-    background-color: darkgoldenrod;
+    background-color: #3498db;
 }
 
 .displayPic{
