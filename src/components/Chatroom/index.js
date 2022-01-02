@@ -71,8 +71,7 @@ const Chatroom = ({ auth, app }) => {
     </div>
       <div>
       <div className="see-chat">
-      <h3>Chatroom</h3>
-   
+    
         {messages && (
           <span>
             {messages.docs.map((doc) => (
@@ -98,7 +97,7 @@ const Chatroom = ({ auth, app }) => {
           onKeyDown={handleKeyDown}
         />
         <button onClick={sendMessage} className="btn">
-          Send
+         Send
         </button>
       </div>
         {/* {messages && messages.length} */}

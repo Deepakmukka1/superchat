@@ -11,9 +11,14 @@ const Signout = ({auth}) => {
 const Navbar = (props) => {
     return (
         <div className='navbar'>
+            <div className='icon'>
+             <h3>Chatroom</h3>
+            </div>
+             <div className='meta-data'>
             <img src={props.imageURL} />
             <h4>{props.name}</h4>
             <Signout auth={props.auth}/>
+            </div>
         </div>
     )
 }

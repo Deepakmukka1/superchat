@@ -2,10 +2,28 @@
 
     /* width: 99vw; */
     height: 100vh;
+   
 
 }
 
 .see-chat{
     height: 80vh;
     overflow-y: scroll;
+    background-color: rgb(179, 243, 164);
+}
+.msg-send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8.7vh;
+    background-color: #001F58;
+}
+.msg-input{
+
+    height: 1rem;
+    padding: 10px;
+    border:none;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 80%;
 }
