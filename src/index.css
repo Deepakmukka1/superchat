@@ -19,6 +19,7 @@ code {
   border: none;
   background-color: #3498db;
   width: 6rem;
+  margin: 0px 5px 0px 5px;
   cursor: pointer;
 }
 ::-webkit-scrollbar {

@@ -8,9 +8,17 @@ const ChatMessage = ({auth,data}) => {
     const classNames=(uid===auth.currentUser.uid?'my-message':'not-my-message')
     // console.log(uid,auth.currentUser.uid)
 
+
+    function isValidUrl(_string){
+        const matchPattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+        return matchPattern.test(_string);
+      }
+    
+
+
     return (
         <div className={classNames}>
-            <p>{message}</p>
+            {isValidUrl(message)?<img src={message} width="200" height="200" style={{marginBottom:'20px'}}/>:<p>{message}</p>}
             <img src={photoURL} className='displayPic'/>
 
         </div>
