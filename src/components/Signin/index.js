@@ -14,9 +14,9 @@ const Signin = ({ auth }) => {
       <div className="icon">
       <Icon />
       </div>
-      <div>
+      <div className="cta-div">
       <h2>Welcome to group chat 🎉✨</h2>
-      <button onClick={signInWithGoogle} className="btn" style={{display:'flex',width:'12rem',alignItems:'center',justifyContent:'center'}}><GoogleIcon/> Signin with google</button>
+      <button onClick={signInWithGoogle} className="btn" style={{display:'flex',width:'12rem',alignItems:'center',justifyContent:'center',marginBottom:'50px'}}><GoogleIcon/> Signin with google</button>
       </div>
     </div>
   );

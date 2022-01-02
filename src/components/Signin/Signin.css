@@ -5,9 +5,28 @@
     flex-direction: row-reverse;
     align-items: center;
     height: 100vh;
+    /* background-color: #D9F1DD; */
 }
 .icon{
 
     /* transform: scale(0.9); */
     margin: 5rem;
+}
+.cta-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* height: ; */
+}
+@media  screen and (max-width:850px) {
+
+    .signin{
+        flex-direction: column;
+    }
+    .icon{
+        transform: scale(0.4);
+        margin-bottom: 0rem;
+    }
+    
 }
