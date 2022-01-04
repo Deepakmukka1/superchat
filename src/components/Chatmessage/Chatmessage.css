@@ -5,6 +5,7 @@
     align-items: center;
     /* background-color: cornflowerblue; */
     justify-content: flex-end;
+    word-wrap: break-word;
 }
 .not-my-message{
 
@@ -13,6 +14,8 @@
     align-items: center;
     /* background-color: cornflowerblue; */
     justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .my-message p,.not-my-message p{
@@ -23,9 +26,14 @@
     background-color: #2ecc71;
     padding: 10px;
     border-radius: 10px;
+    width: auto;
+    max-width: 300px;
+    
+    /* word-wrap: normal; */
 }
 .not-my-message p{
     background-color: #3498db;
+    /* word-wrap: break-word; */
 }
 
 .displayPic{
