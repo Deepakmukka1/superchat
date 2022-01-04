@@ -6,6 +6,7 @@
     /* background-color: cornflowerblue; */
     justify-content: flex-end;
     word-wrap: break-word;
+    word-break: break-all;
 }
 .not-my-message{
 

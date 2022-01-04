@@ -4,6 +4,5 @@
 
 
 - [ ] Deployed on netlfiy, dont commit minor changes
-- [ ] Add image send option to user 
 - [ ] Add icon
 - [ ] Add config to gitignore 
