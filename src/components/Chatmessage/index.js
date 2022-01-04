@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable no-useless-escape */
 import React from 'react'
 import './Chatmessage.css'
 
