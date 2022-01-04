@@ -18,7 +18,7 @@ const ChatMessage = ({auth,data}) => {
 
     return (
         <div className={classNames}>
-            {isValidUrl(message)?<img src={message} width="200" height="200" style={{marginBottom:'20px'}}/>:<p>{message}</p>}
+            {isValidUrl(message)?<img src={message} width="300" height="200" style={{marginBottom:'20px',objectFit:"contain"}}/>:<p>{message}</p>}
             <img src={photoURL} className='displayPic'/>
 
         </div>

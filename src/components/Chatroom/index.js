@@ -141,7 +141,7 @@ uploadBytesResumable(mountainsRef, file).then((snapshot) => {
         </button>
         {/* <input type='file' className="btn"/>   */}
         <button onClick={uploadImage} className="btn">
-          Upload
+         Upload
         </button>
         <input type='file' hidden ref={fileUploadRef} onChange={handleImageUpload} accept="image/png, image/gif, image/jpeg"/>
       </div>
