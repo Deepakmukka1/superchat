@@ -12,7 +12,9 @@ import Signin from "./components/Signin";
 
 // Initialize Firebase
 
-const app = initializeApp(JSON.parse(process.env.FIREBASE_CONFIG))
+console.log(process.env.REACT_APP_FIREBASE_CONFIG)
+console.log(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG))
+const app = initializeApp(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG))
 
 const auth = getAuth(app);
 
