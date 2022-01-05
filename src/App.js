@@ -11,11 +11,10 @@ import { firebaseConfig } from "./config/firebase";
 // Import the functions you need from the SDKs you need
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
+const app = process.env.NODE_ENV==="development"?initializeApp(firebaseConfig):initializeApp(JSON.parse(process.env.FIREBASE_CONFIG))
+
 const auth = getAuth(app);
-// console.log(auth)
-
-
 
 function App() {
   const [user] = useAuthState(auth);
