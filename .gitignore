@@ -5,11 +5,10 @@
 /.pnp
 .pnp.js
 
-**/config
-
-
 # testing
 /coverage
+
+**/config
 
 
 # production
