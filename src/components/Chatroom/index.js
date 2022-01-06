@@ -18,9 +18,11 @@ import { getStorage, ref,uploadBytesResumable,getDownloadURL } from "firebase/st
 import './Chatroom.css'
 import { useCollection } from "react-firebase-hooks/firestore";
 import ChatMessage from "../Chatmessage";
+import Modal from "../Modal";
 
 const Chatroom = ({ auth, app }) => {
 
+  const [isModalOpen,setIsModalOpen]=useState({content:'',state:false})
   const [message,setMessage]=useState('')
   const { currentUser } = auth;
   const db = getFirestore(app);
@@ -29,7 +31,7 @@ const Chatroom = ({ auth, app }) => {
   const [messages]=useCollection(qureyToBe)
   const messagesEndRef=useRef(null)
   const fileUploadRef=useRef(null)
-  const [url,setUrl]=useState(null)
+  // const [url,setUrl]=useState(null)
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -38,6 +40,11 @@ const Chatroom = ({ auth, app }) => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+
+  // useEffect(()=>{
+  //     console.log("Hello")
+  // },[isModalOpen])
 
   const sendMessage = async () => {
     await addDoc(collection(db, "messages"), {
@@ -63,23 +70,30 @@ const Chatroom = ({ auth, app }) => {
     const storage = getStorage();
     // console.log(file)
 
-// Create a reference to 'mountains.jpg'
-const mountainsRef = ref(storage, file?.name);
+// Create a reference to 'imagee.jpg'
+const imageRefFirebase = ref(storage, file?.name || "Default.jpg" );
 
-uploadBytesResumable(mountainsRef, file).then((snapshot) => {
-  console.log('Uploaded a blob or file!');
+setIsModalOpen({...isModalOpen,state:true,content:'Uploading image'})
+
+uploadBytesResumable(imageRefFirebase, file).then((snapshot) => {
+
   getDownloadURL(snapshot.ref).then(async(downloadURL) => {
-    console.log('File available at', downloadURL);
-    // setMessage(downloadURL)
+
     await addDoc(collection(db, "messages"), {
       message: downloadURL,
       createdAt: serverTimestamp(),
       uid: currentUser.uid,
       photoURL: currentUser.photoURL,
     });
+  }).catch((err)=>{
+    console.log(err)
   });
-});
+  setIsModalOpen({...isModalOpen,state:false})
+}).catch((err)=>{
+  console.log("Upload error")
+})
 
+// setIsModalOpen(false)
 
 
 
@@ -110,6 +124,7 @@ uploadBytesResumable(mountainsRef, file).then((snapshot) => {
       />
     </div>
       <div>
+      { isModalOpen.state && <Modal modalContent={isModalOpen.content}/>}
       <div className="see-chat">
     
         {messages && (

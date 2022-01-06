@@ -1,0 +1,14 @@
+.modal{
+
+    width: 30%;
+    height: 30%;
+    background-color: crimson;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    transform: translate(110%,60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
